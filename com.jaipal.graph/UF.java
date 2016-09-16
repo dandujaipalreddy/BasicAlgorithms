@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 public class UF {
 
     private int[] parent;  // parent[i] = parent of i
@@ -13,6 +14,11 @@ public class UF {
             rank[i] = 0;
         }
     }
+
+    public static void main(String[] args) {
+
+    }
+
     public int find(int p) {
         validate(p);
         while (p != parent[p]) {
@@ -25,11 +31,11 @@ public class UF {
     public int count() {
         return count;
     }
- 
+
     public boolean connected(int p, int q) {
         return find(p) == find(q);
     }
-  
+
     public void union(int p, int q) {
         int rootP = find(p);
         int rootQ = find(q);
@@ -48,10 +54,7 @@ public class UF {
     private void validate(int p) {
         int N = parent.length;
         if (p < 0 || p >= N) {
-            throw new IndexOutOfBoundsException("index " + p + " is not between 0 and " + (N-1));  
+            throw new IndexOutOfBoundsException("index " + p + " is not between 0 and " + (N - 1));
         }
-    }
-    public static void main(String[] args) {
-       
     }
 }

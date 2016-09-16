@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -14,22 +15,6 @@ public class Graph {
 		adj = new LinkedList[V];
 		for (int i = 0; i < v; i++)
 			adj[i] = new LinkedList<Integer>();
-	}
-
-	public void addEdge(int src, int dest) {
-		adj[src].add(dest);
-		adj[dest].add(src);
-
-	}
-
-	public int V() {
-		return V;
-	}
-	public int E() {
-		return E;
-	}
-	public LinkedList<Integer> adjacent(int src) {
-		return adj[src];
 	}
 
 	public static void main(String[] args) {
@@ -51,6 +36,24 @@ public class Graph {
 			System.out.println(i + ":" + G.adjacent(i));
 		}
 		in.close();
-	}
+    }
+
+    public void addEdge(int src, int dest) {
+        adj[src].add(dest);
+        adj[dest].add(src);
+
+    }
+
+    public int V() {
+        return V;
+    }
+
+    public int E() {
+        return E;
+    }
+
+    public LinkedList<Integer> adjacent(int src) {
+        return adj[src];
+    }
 
 }

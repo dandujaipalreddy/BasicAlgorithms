@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -36,6 +37,11 @@ public class MinPQ<Key> implements Iterable<Key> {
         assert isMinHeap();
     }
 
+    public static void main(String[] args) {
+
+
+    }
+
     public boolean isEmpty() {
         return N == 0;
     }
@@ -43,6 +49,7 @@ public class MinPQ<Key> implements Iterable<Key> {
     public int size() {
         return N;
     }
+
     public Key min() {
         if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
         return pq[1];
@@ -89,7 +96,6 @@ public class MinPQ<Key> implements Iterable<Key> {
         assert isMinHeap();
         return min;
     }
-
 
    /***************************************************************************
     * Helper functions to restore the heap invariant.
@@ -144,7 +150,6 @@ public class MinPQ<Key> implements Iterable<Key> {
         return isMinHeap(left) && isMinHeap(right);
     }
 
-
     /**
      * Returns an iterator that iterates over the keys on this priority queue
      * in ascending order.
@@ -176,8 +181,4 @@ public class MinPQ<Key> implements Iterable<Key> {
             return copy.delMin();
         }
     }
-
-    public static void main(String[] args) {
-       
-
-}}
+}

@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.LinkedList;
 
 public class EdgeWeightDigraph {
@@ -11,7 +12,7 @@ public class EdgeWeightDigraph {
         this.V = V;
         adj = (LinkedList<DirectedEdge>[]) new LinkedList[V];
         for (int v = 0; v < V; v++) {
-            adj[v] = new LinkedList<DirectedEdge>();
+            adj[v] = new LinkedList<>();
         }
     }
 

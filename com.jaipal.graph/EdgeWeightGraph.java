@@ -1,4 +1,8 @@
+package com.jaipal.graph;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class EdgeWeightGraph {
 
@@ -49,7 +53,7 @@ public class EdgeWeightGraph {
 
   
     public Iterable<Edge> edges() {
-        Bag<Edge> list = new Bag<Edge>();
+        List<Edge> list = new ArrayList<Edge>();
         for (int v = 0; v < V; v++) {
             int selfLoops = 0;
             for (Edge e : adj(v)) {

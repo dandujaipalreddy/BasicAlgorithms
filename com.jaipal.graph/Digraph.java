@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.LinkedList;
 
 public class Digraph {
@@ -17,6 +18,11 @@ public class Digraph {
 		adj = new LinkedList[V];
 		for (int i = 0; i < v; i++)
 			adj[i] = new LinkedList<Integer>();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
 	}
 
 	public void addEdge(int src, int dest) {
@@ -56,11 +62,6 @@ public class Digraph {
 			}
 		}
 		return R;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

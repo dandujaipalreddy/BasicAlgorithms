@@ -1,4 +1,4 @@
-public class Permutation_String {
+class Permutation_String {
 
 	public static void permutation(String str) {
 		permutation("", str);

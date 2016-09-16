@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -19,6 +20,24 @@ public class Bipartite {
 			System.out.println(k);
 	}
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter No of Vertices");
+		int v = in.nextInt();
+		System.out.println("Enter No of Edges");
+		int e = in.nextInt();
+		Graph G = new Graph(v, e);
+		System.out.println("Enter (source,destination) of every edge");
+		for (int i = 0; i < e; i++) {
+			int src = in.nextInt();
+			int dest = in.nextInt();
+			G.addEdge(src, dest);
+		}
+		Bipartite bp = new Bipartite(G);
+
+	}
+
 	public boolean isPartite(Graph G, int s) {
 
 		Queue<Integer> q = new LinkedList<Integer>();
@@ -38,24 +57,6 @@ public class Bipartite {
 
 		}
 		return true;
-
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner in = new Scanner(System.in);
-		System.out.println("Enter No of Vertices");
-		int v = in.nextInt();
-		System.out.println("Enter No of Edges");
-		int e = in.nextInt();
-		Graph G = new Graph(v, e);
-		System.out.println("Enter (source,destination) of every edge");
-		for (int i = 0; i < e; i++) {
-			int src = in.nextInt();
-			int dest = in.nextInt();
-			G.addEdge(src, dest);
-		}
-		Bipartite bp = new Bipartite(G);
 
 	}
 

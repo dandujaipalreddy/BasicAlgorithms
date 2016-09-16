@@ -1,4 +1,4 @@
-
+package com.jaipal.graph;
 public class Edge implements Comparable<Edge> {
 
 	private int v;

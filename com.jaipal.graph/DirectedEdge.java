@@ -1,4 +1,4 @@
-
+package com.jaipal.graph;
 public class DirectedEdge {
 	
 	

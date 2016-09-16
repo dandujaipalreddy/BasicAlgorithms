@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -12,30 +13,6 @@ public class DFS {
 		toEdge = new int[G.V()];
 		marked = new boolean[G.V()];
 		dfs(G, v);
-	}
-
-	private void dfs(Graph G, int v) {
-		marked[v] = true;
-		for (int k : G.adjacent(v)) {
-			if (!marked[k]) {
-				toEdge[k] = v;
-				dfs(G, k);
-			}
-		}
-	}
-
-	public boolean hasPathTo(int v) {
-		return marked[v];
-	}
-
-	public Iterable<Integer> pathTo(int v) {
-		if (!hasPathTo(v))
-			return null;
-		Stack<Integer> path = new Stack<Integer>();
-		for (int x = v; x != src; x = toEdge[x])
-			path.push(x);
-		path.push(src);
-		return path;
 	}
 
 	public static void main(String[] args) {
@@ -62,6 +39,30 @@ public class DFS {
 			}
 
 		}
+	}
+
+	private void dfs(Graph G, int v) {
+		marked[v] = true;
+		for (int k : G.adjacent(v)) {
+			if (!marked[k]) {
+				toEdge[k] = v;
+				dfs(G, k);
+			}
+		}
+	}
+
+	public boolean hasPathTo(int v) {
+		return marked[v];
+	}
+
+	public Iterable<Integer> pathTo(int v) {
+		if (!hasPathTo(v))
+			return null;
+		Stack<Integer> path = new Stack<Integer>();
+		for (int x = v; x != src; x = toEdge[x])
+			path.push(x);
+		path.push(src);
+		return path;
 	}
 
 }

@@ -1,3 +1,4 @@
+package com.jaipal.graph;
 import java.util.Scanner;
 
 public class Finding_Cycle {
@@ -16,23 +17,6 @@ public class Finding_Cycle {
 
 	}
 
-	private boolean dfs(Graph G, int v) {
-
-		if (!marked[v]) {
-			marked[v] = true;
-			rec_stack[v] = true;
-			for (int k : G.adjacent(v)) {
-				if (!marked[k] && dfs(G, k))
-					return true;
-				else if (rec_stack[k])
-					return true;
-			}
-
-		}
-		rec_stack[v] = false;
-		return false;
-	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
@@ -49,6 +33,23 @@ public class Finding_Cycle {
 		}
 		Finding_Cycle f = new Finding_Cycle(G);
 
+	}
+
+	private boolean dfs(Graph G, int v) {
+
+		if (!marked[v]) {
+			marked[v] = true;
+			rec_stack[v] = true;
+			for (int k : G.adjacent(v)) {
+				if (!marked[k] && dfs(G, k))
+					return true;
+				else if (rec_stack[k])
+					return true;
+			}
+
+		}
+		rec_stack[v] = false;
+		return false;
 	}
 
 }
