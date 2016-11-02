@@ -1,3 +1,5 @@
+package com.jaipal;
+
 import java.util.Scanner;
 
 public class Eulertotient {

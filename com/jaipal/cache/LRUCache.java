@@ -9,7 +9,7 @@ import java.util.Map;
 public class LRUCache<K, V> implements Cache<K, V> {
 
 
-    private final int size;
+    private int size;
     private int currentSize;
     private Map<K, Node<K, V>> cache;
     private DoubleLinkedList<K, V> dll;

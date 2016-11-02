@@ -5,7 +5,7 @@ package com.jaipal.cache;
  */
 public class DoubleLinkedList<K, V> {
     public Node<K, V> head;
-    public Node<K, V> tail;
+    public Node tail;
 
     public DoubleLinkedList() {
         this.head = null;
@@ -13,7 +13,7 @@ public class DoubleLinkedList<K, V> {
     }
 
     public Node addFirst(K key, V data) {
-        Node<K, V> node = new Node(key, data, null, null);
+        Node node = new Node(key, data, null, null);
         if (isEmpty()) {
             head = node;
             tail = node;
@@ -26,8 +26,8 @@ public class DoubleLinkedList<K, V> {
         return node;
     }
 
-    public Node addLast(K key, V data) {
-        Node<K, V> node = new Node(key, data, null, null);
+    public Node<K, V> addLast(K key, V data) {
+        Node<K, V> node = new Node<>(key, data, null, null);
         if (isEmpty()) {
             head = node;
             tail = node;
@@ -42,7 +42,7 @@ public class DoubleLinkedList<K, V> {
 
     public K removeFirst() {
         if (isEmpty()) return null;
-        Node node = head;
+        Node<K, V> node = head;
         if (head.next == null) {
             head = null;
             tail = null;
@@ -50,12 +50,12 @@ public class DoubleLinkedList<K, V> {
             head = head.next;
             head.previous = null;
         }
-        return (K) node.key;
+        return node.key;
     }
 
     public K removeLast() {
         if (isEmpty()) return null;
-        Node node = tail;
+        Node<K, V> node = tail;
         if (head.next == null) {
             head = null;
             tail = null;
@@ -63,7 +63,7 @@ public class DoubleLinkedList<K, V> {
             tail = tail.previous;
             tail.next = null;
         }
-        return (K) node.key;
+        return node.key;
     }
 
 

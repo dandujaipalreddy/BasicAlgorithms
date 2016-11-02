@@ -1,3 +1,5 @@
+package com.jaipal;
+
 class Permutation_String {
 
 	public static void permutation(String str) {
