@@ -1,7 +1,7 @@
 package com.jaipal.cache;
 
 /**
- * Created by dreddy on 10/31/2016.
+ *
  */
 public class DoubleLinkedList<K, V> {
     public Node<K, V> head;
