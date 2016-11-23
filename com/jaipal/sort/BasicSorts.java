@@ -8,8 +8,9 @@ import java.util.PriorityQueue;
 public class BasicSorts {
     public static void main(String[] args) {
 
-        int[] a = {2, 3, 1, 5, 4, 10, 9, 8, 0, 13};
-        a = insertionSort(a);
+        //  int[] a = {8, 3, 1, 5, 4, 10, 9, 8, 0, 13};
+        int[] a = {0, -3, 6, 4, -10, 8, -5, 2, -7};
+        a = bubbleSort(a);
         for (int i = 0; i < a.length; i++)
             System.out.print(a[i] + " ");
     }
@@ -76,6 +77,41 @@ public class BasicSorts {
                 j--;
             }
         }
+        return a;
+    }
+
+    public static int[] bubbleSort(int[] a) {
+        boolean isSorted = false;
+        for (int i = 0; i < a.length && !isSorted; i++) {
+            isSorted = true;
+            for (int j = i + 1; j < a.length; j++)
+                if (a[i] > a[j]) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                    isSorted = false;
+                }
+        }
+        return a;
+    }
+
+    public static int[] partition(int[] a, int p) {
+
+        int pivot = a[p];
+        int i = a.length;
+        for (int j = a.length - 1; j >= 0; j--) {
+            if (a[j] > pivot) {
+                i--;
+                if (i != j) {
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        int temp = a[i - 1];
+        a[i - 1] = a[0];
+        a[0] = temp;
         return a;
     }
 
