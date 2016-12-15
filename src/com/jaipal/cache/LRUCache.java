@@ -21,6 +21,23 @@ public class LRUCache<K, V> implements Cache<K, V> {
         dll = new DoubleLinkedList<K, V>();
     }
 
+    public static LRUCache getInstance(int size) {
+        return new LRUCache(size);
+    }
+
+    public static void main(String args[]) {
+        LRUCache<Integer, String> cache = LRUCache.getInstance(3);
+        cache.put(1, "a");
+        cache.put(2, "b");
+        cache.put(3, "c");
+        cache.get(3);
+        cache.put(4, "d");
+        cache.get(2);
+        cache.get(3);
+        cache.put(5, "e");
+        System.out.println(cache.cache.entrySet());
+    }
+
     @Override
     public V get(K key) {
         if (cache.containsKey(key)) {
@@ -72,24 +89,6 @@ public class LRUCache<K, V> implements Cache<K, V> {
         for (Map.Entry<K, Node<K, V>> entry : cache.entrySet()) {
             System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue().value);
         }
-    }
-
-
-    public static LRUCache getInstance(int size) {
-        return new LRUCache(size);
-    }
-
-    public static void main(String args[]) {
-        LRUCache<Integer, String> cache = LRUCache.getInstance(3);
-        cache.put(1, "a");
-        cache.put(2, "b");
-        cache.put(3, "c");
-        cache.get(3);
-        cache.put(4, "d");
-        cache.get(2);
-        cache.get(3);
-        cache.put(5, "e");
-        System.out.println(cache.cache.entrySet());
     }
 
 }

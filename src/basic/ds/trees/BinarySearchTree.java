@@ -17,22 +17,15 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
         rootOfBST = null;
     }
 
-    protected static class Node<T extends Comparable<T>> {
-
-        private T data;
-        private Node<T> left;
-        private Node<T> right;
-        private int n;
-
-        public Node(T data) {
-            this.data = data;
+    public static void main(String[] args) {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>();
+        Random r = new Random(100);
+        for (int i = 0; i < 20; i++) {
+            bst.add(r.nextInt(300));
         }
 
-        @Override
-        public String toString() {
-            return "Node [data=" + data + ", left=" + left + ", right=" + right + "]";
-        }
-
+        bst.printBST();
+        System.out.println(bst.getKthSmallest(5));
     }
 
     /*
@@ -185,14 +178,21 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T> {
         return null;
     }
 
-    public static void main(String[] args) {
-        BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>();
-        Random r = new Random(100);
-        for (int i = 0; i < 20; i++) {
-            bst.add(r.nextInt(300));
+    protected static class Node<T extends Comparable<T>> {
+
+        private T data;
+        private Node<T> left;
+        private Node<T> right;
+        private int n;
+
+        public Node(T data) {
+            this.data = data;
         }
 
-        bst.printBST();
-        System.out.println(bst.getKthSmallest(5));
+        @Override
+        public String toString() {
+            return "Node [data=" + data + ", left=" + left + ", right=" + right + "]";
+        }
+
     }
 }

@@ -12,6 +12,10 @@ public class DoubleLinkedList<K, V> {
         this.tail = null;
     }
 
+    public static void main(String args[]) {
+
+    }
+
     public Node addFirst(K key, V data) {
         Node node = new Node(key, data, null, null);
         if (isEmpty()) {
@@ -66,7 +70,6 @@ public class DoubleLinkedList<K, V> {
         return node.key;
     }
 
-
     public boolean isEmpty() {
         return this.head == null;
     }
@@ -80,10 +83,6 @@ public class DoubleLinkedList<K, V> {
                 System.out.println(iter.value);
             }
         }
-    }
-
-    public static void main(String args[]) {
-
     }
 
 }
