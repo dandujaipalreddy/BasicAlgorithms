@@ -2,6 +2,7 @@ package basic.ds.trees;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by dreddy on 12/16/2016.
@@ -20,7 +21,7 @@ public class Heap<T extends Comparable> {
         Heap<Integer> a = new Heap();
         int n = 10;
         for (int i = 0; i < n; i++) {
-            int number = i;//new Random().nextInt(1000);
+            int number = new Random().nextInt(1000);
             System.out.print(number + " ");
             a.addToHeap(number);
         }
