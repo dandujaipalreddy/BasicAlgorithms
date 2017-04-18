@@ -47,7 +47,6 @@ public class EdgeWeightGraph {
 
    
     public int degree(int v) {
-        
         return adj[v].size();
     }
 

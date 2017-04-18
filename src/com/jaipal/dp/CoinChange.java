@@ -15,6 +15,7 @@ public class CoinChange {
         for (int i = 0; i < n; i++)
             a[i] = in.nextInt();
         System.out.println(CountCoinsDP(a, amount));
+        System.out.println(countMinCoinsRequired(a, amount));
 
     }
 
@@ -59,6 +60,25 @@ public class CoinChange {
             }
         }
         return solution[v.length][amount];
+    }
+
+    public static long countMinCoinsRequired(int[] v,int amount){
+
+        int[] table=new int[amount+1];
+        for(int i=1;i<=amount;i++)
+            table[i]=Integer.MAX_VALUE;
+        table[0]=0;
+
+        for(int i=1;i<=amount;i++){
+            for(int j=0;j<v.length;j++){
+                if(v[j]<=i){
+                    int res=table[i-v[j]];
+                    if(res!=Integer.MAX_VALUE && res+1<table[i])
+                        table[i]=res+1;
+                }
+            }
+        }
+        return table[amount];
     }
 
 }

@@ -28,9 +28,24 @@ public class BitManipulation {
         return x;
     }
 
+    public static long complemetBits(int x){
+        int num=0;
+        int i=0;
+        while(x!=0){
+            int l= (x>>0) & 1;
+            if(l==0)
+                num+=(1<<i);
+            x>>=1;
+            i++;
+        }
+        return num;
+    }
+
+
+
 
     public static void main(String args[]) {
         // System.out.println(calculateParity(13));
-        System.out.println(swapBits(20, 2, 3));
+        System.out.println(complemetBits(1));
     }
 }
